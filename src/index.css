@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* OVERIDE SEMANTIC-UI CSS */
+.segment {
+	margin: 0 !important;
+}
+
+/* HEADER COMPONENT */
+.ui.breadcrumb a.section {
+	color: black;
+}
+
+/* USERLIST COMPONENT */
+.UserList {
+	width: 20rem;
+	height: 100vh;
+}
+
+.UserList.segment {
+	padding: 0;
+}
+
+.content {
+	padding-left: 1rem;
+}
+
+.item {
+	width: 100%;
+	padding: .7rem 0 !important;
+}
+
+.item:hover {
+	cursor: pointer;
+	background-color: rgba(0, 128, 83, 0.493);
+	color: white;
+}
