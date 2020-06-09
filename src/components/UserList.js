@@ -6,13 +6,13 @@ const UserList = ({ authorList, setAuthorSelected }) => {
 		return authorList.map((author) => {
 			return (
 				<Fragment>
-					<div className="item">
+					<div className="item item-user">
 						<div className="right floated content">
 							<i className="chevron right icon" />
 						</div>
 						<Link
 							to={`/author/${author.id}`}
-							className="item-link"
+							className="item-user-link"
 							onClick={() => setAuthorSelected(author)}
 						>
 							<div className="content">{author.name}</div>
