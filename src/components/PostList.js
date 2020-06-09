@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const PostList = () => {
 	return (
 		<Fragment>
-			<div className="item">
+			<div className="item post-item">
 				<div className="right floated content">
-					<i className="align justify" />
+					<i className="align justify icon" />
 				</div>
 				<Link to={`/post/id`} className="item-link" onClick={() => console.log('click posts')}>
 					<div className="content">Post 1</div>

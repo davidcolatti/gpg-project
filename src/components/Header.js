@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = ({ authorSelected }) => {
+const Header = ({ authorSelected, setAuthorSelected }) => {
 	return (
 		<div className="Header ui segment">
 			<div className="ui breadcrumb">
-				<Link to="/" className="section">
+				<Link to="/" onClick={() => setAuthorSelected(null)} className="section">
 					Authors Management
 				</Link>
 				<div className="divider"> / </div>

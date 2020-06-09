@@ -1,34 +1,43 @@
 import React from 'react';
 import PostList from './PostList';
 
-const MainArea = ({ authorSelected }) => {
+const MainArea = (props) => {
+	if (props.authorList) {
+
+		let authorChosen = props.authorList.find(author => {
+			return author.id == props.match.params.id
+		})
+
+		props.setAuthorSelected(authorChosen)
+	}
+
 	return (
 		<div className="MainArea">
 			<div className="main-top-div">
 				<div className="main-top-content">
 					<span className="top-content-left">
-						<strong>{authorSelected?.name}</strong>
+						<strong>{props.authorSelected?.name}</strong>
 						<br />
-						<i>{authorSelected?.username}</i>
+						<i>{props.authorSelected?.username}</i>
 					</span>
-					<span className="top-content-right">{authorSelected?.email}</span>
+					<span className="top-content-right">{props.authorSelected?.email}</span>
 				</div>
 				<div className="main-top-contact">
 					<span>
 						<strong>Contact</strong>
 						<br />
-						{`${authorSelected?.address.suite} ${authorSelected?.address.street}`}
+						{`${props.authorSelected?.address.suite} ${props.authorSelected?.address.street}`}
 						<br />
-						{`${authorSelected?.address.city}, ${authorSelected?.address.zipcode}`}
+						{`${props.authorSelected?.address.city}, ${props.authorSelected?.address.zipcode}`}
 						<br />
-						{authorSelected?.phone}
+						{props.authorSelected?.phone}
 					</span>
 				</div>
 			</div>
 			<div className="main-bottom-div">
 				<div className="post-list-title">
 					<span className="left-title">
-                        <strong>Post List by {authorSelected?.name}</strong>
+                        <strong>Post List by {props.authorSelected?.name}</strong>
 					</span>
 					<span className="right-title">Total posts 12</span>
 				</div>

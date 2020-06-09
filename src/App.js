@@ -6,7 +6,7 @@ import Header from './components/Header';
 import UserList from './components/UserList';
 import MainArea from './components/MainArea';
 
-const App = () => {
+const App = (props) => {
 	const [ authorList, setAuthorList ] = useState(() => null);
 	const [ authorSelected, setAuthorSelected ] = useState(() => null);
 
@@ -16,14 +16,13 @@ const App = () => {
 			console.log(res.data);
 
 			setAuthorList(res.data);
-			setAuthorSelected(res.data[0]);
 		}
 		fetchData();
 	}, []);
 
 	return (
 		<div className="App">
-			<Header authorSelected={authorSelected} />
+			<Header {...props} authorSelected={authorSelected} setAuthorSelected={setAuthorSelected} />
 
 			<div className="app-content">
 				<div className="UserList segment ui middle aligned divided list">
@@ -33,7 +32,14 @@ const App = () => {
 				<Route
 					exact
 					path="/author/:id"
-					render={() => <MainArea setAuthorSelected={setAuthorSelected} authorSelected={authorSelected} />}
+					render={(props) => (
+						<MainArea
+							{...props}
+							authorList={authorList}
+							setAuthorSelected={setAuthorSelected}
+							authorSelected={authorSelected}
+						/>
+					)}
 				/>
 			</div>
 		</div>
