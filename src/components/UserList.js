@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-const UserList = ({ state, setAuthorToState }) => {
-	if (state.authorList) {
-		return state.authorList.map((author) => {
+const UserList = ({ authorList, setAuthorSelected }) => {
+	if (authorList) {
+		return authorList.map((author) => {
 			return (
 				<Fragment>
 					<div className="item">
@@ -13,7 +13,7 @@ const UserList = ({ state, setAuthorToState }) => {
 						<Link
 							to={`/author/${author.id}`}
 							className="item-link"
-							onClick={() => setAuthorToState(author)}
+							onClick={() => setAuthorSelected(author)}
 						>
 							<div className="content">{author.name}</div>
 						</Link>
