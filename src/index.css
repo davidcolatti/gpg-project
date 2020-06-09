@@ -32,6 +32,14 @@
 	padding: .7rem 0 !important;
 }
 
+.item-link {
+	color: black;
+}
+
+.item:hover .item-link {
+	color: white;
+}
+
 .item:hover {
 	cursor: pointer;
 	background-color: rgba(0, 128, 83, 0.493);

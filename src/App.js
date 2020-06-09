@@ -15,21 +15,34 @@ class App extends Component {
 		console.log(res.data);
 
 		this.setState({
-			authorList: res.data
+			authorList: res.data,
+			authorSelected: res.data[0]
 		});
 	}
+
+	setAuthorToState = (author) => {
+		console.log(author);
+
+		this.setState({
+			authorSelected: author
+		});
+	};
 
 	render() {
 		return (
 			<div className="App">
-				<Header />
+				<Header authorSelected={this.state.authorSelected} />
 
 				<div className="UserList segment ui middle aligned divided list">
-					{this.state.authorList ? <UserList authorList={this.state.authorList} /> : ''}
+					{this.state.authorList ? (
+						<UserList setAuthorToState={this.setAuthorToState} state={this.state} />
+					) : (
+						''
+					)}
 				</div>
 
 				<Switch>
-					<Route exact path="/detail/:id" />
+					<Route exact path="/author/:id" />
 				</Switch>
 			</div>
 		);
