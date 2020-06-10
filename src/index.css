@@ -115,3 +115,60 @@
 .posts-button-div button:hover {
 	background-color: #945656 !important;
 }
+
+/* POSTLIST COMPONENT */
+.post-item {
+	font-size: 15px;
+	padding: .7rem 0 !important;
+}
+
+.post-item:hover .item-link {
+	color: black;
+}
+
+.item-link {
+	color: rgb(54, 54, 54);
+}
+
+/* POSTMODAL COMPONENT */
+.PostModal {
+	width: 100% !important;
+}
+
+.popup-content {
+	background-color: rgba(0, 0, 0, 0) !important;
+	border: 1px solid rgba(0, 0, 0, 0) !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-header {
+	display: flex;
+	justify-content: space-between;
+	background-color: #90bcb3;
+	color: white;
+	height: 4rem;
+	font-size: 20px;
+	padding: .5rem 0;
+}
+
+.modal-header strong {
+	align-self: flex-end;
+	padding-left: 2rem;
+}
+
+.modal-header i {
+	padding-right: 2rem;
+}
+
+.modal-header i:hover {
+	cursor: pointer;
+	color: rgb(228, 227, 227);
+	transition: 0.25s;
+}
+
+.modal-description {
+	padding: 2rem;
+	font-size: 15px;
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 
 import Header from './components/Header';
@@ -29,18 +29,19 @@ const App = (props) => {
 					{authorList ? <UserList setAuthorSelected={setAuthorSelected} authorList={authorList} /> : ''}
 				</div>
 
-				<Route
-					exact
-					path="/author/:id"
-					render={(props) => (
-						<MainArea
-							{...props}
-							authorList={authorList}
-							setAuthorSelected={setAuthorSelected}
-							authorSelected={authorSelected}
-						/>
-					)}
-				/>
+				<Switch>
+					<Route
+						path="/author/:id"
+						render={(props) => (
+							<MainArea
+								{...props}
+								authorList={authorList}
+								setAuthorSelected={setAuthorSelected}
+								authorSelected={authorSelected}
+							/>
+						)}
+					/>
+				</Switch>
 			</div>
 		</div>
 	);
