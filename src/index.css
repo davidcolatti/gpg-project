@@ -1,174 +1,174 @@
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* OVERIDE SEMANTIC-UI CSS */
 .segment {
-	margin: 0 !important;
+  margin: 0 !important;
 }
 
 /* APP COMPONENT */
 .app-content {
-	display: flex;
-	flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 /* HEADER COMPONENT */
 .ui.breadcrumb a.section {
-	color: black;
+  color: black;
 }
 
 /* USERLIST COMPONENT */
 .UserList {
-	width: 20rem;
-	height: 100vh;
+  width: 20rem;
+  height: 100vh;
 }
 
 .UserList.segment {
-	padding: 0;
+  padding: 0;
 }
 
 .content {
-	padding-left: 1rem;
+  padding-left: 1rem;
 }
 
 .item-user {
-	width: 100%;
-	padding: .7rem 0 !important;
+  width: 100%;
+  padding: 0.7rem 0 !important;
 }
 
 .item-user-link {
-	color: black;
+  color: black;
 }
 
 .item-user:hover .item-user-link {
-	color: white;
-	font-weight: bold;
+  color: white;
+  font-weight: bold;
 }
 
 .item-user:hover {
-	cursor: pointer;
-	background-color: #90bcb3;
-	color: white;
+  cursor: pointer;
+  background-color: #90bcb3;
+  color: white;
 }
 
 /* MAINAREA COMPONENT */
 .MainArea {
-	padding: 1rem;
-	width: 100%;
+  padding: 1rem;
+  width: 100%;
 }
 
 .main-top-content {
-	padding: 1rem;
-	display: flex;
-	justify-content: space-between;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .top-content-left {
-	margin-left: 1rem;
-	font-size: 20px;
+  margin-left: 1rem;
+  font-size: 20px;
 }
 
 .top-content-left i {
-	font-size: 15px;
+  font-size: 15px;
 }
 
 .top-content-right {
-	margin-right: 1rem;
-	font-size: 15px;
+  margin-right: 1rem;
+  font-size: 15px;
 }
 
 .main-top-contact {
-	margin: 1rem 0;
-	padding-left: 2rem;
+  margin: 1rem 0;
+  padding-left: 2rem;
 }
 
 .post-list-title {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .left-title {
-	margin: 1rem 0 1rem 2rem;
+  margin: 1rem 0 1rem 2rem;
 }
 
 .right-title {
-	margin: 1rem 2rem 1rem 0;
+  margin: 1rem 2rem 1rem 0;
 }
 
 .post-list {
-	margin: 0 1.8rem !important;
+  margin: 0 1.8rem !important;
 }
 
 .posts-button-div {
-	display: flex;
-	justify-content: center;
-	padding: 2rem;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
 }
 
 .posts-button-div button {
-	background-color: #ac6363 !important;
-	color: white !important;
+  background-color: #ac6363 !important;
+  color: white !important;
 }
 
 .posts-button-div button:hover {
-	background-color: #945656 !important;
+  background-color: #945656 !important;
 }
 
 /* POSTLIST COMPONENT */
 .post-item {
-	font-size: 15px;
-	padding: .7rem 0 !important;
+  font-size: 15px;
+  padding: 0.7rem 0 !important;
 }
 
 .post-item:hover .item-link {
-	color: black;
+  color: black;
 }
 
 .item-link {
-	color: rgb(54, 54, 54);
+  color: rgb(54, 54, 54);
 }
 
 /* POSTMODAL COMPONENT */
 .PostModal {
-	width: 100% !important;
+  width: 100% !important;
 }
 
 .popup-content {
-	background-color: rgba(0, 0, 0, 0) !important;
-	border: 1px solid rgba(0, 0, 0, 0) !important;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  background-color: rgba(0, 0, 0, 0) !important;
+  border: 1px solid rgba(0, 0, 0, 0) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-header {
-	display: flex;
-	justify-content: space-between;
-	background-color: #90bcb3;
-	color: white;
-	height: 4rem;
-	font-size: 20px;
-	padding: .5rem 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: #90bcb3;
+  color: white;
+  height: 4rem;
+  font-size: 20px;
+  padding: 0.5rem 0;
 }
 
 .modal-header strong {
-	align-self: flex-end;
-	padding-left: 2rem;
+  align-self: flex-end;
+  padding-left: 2rem;
 }
 
 .modal-header i {
-	padding-right: 2rem;
+  padding-right: 2rem;
 }
 
 .modal-header i:hover {
-	cursor: pointer;
-	color: rgb(228, 227, 227);
-	transition: 0.25s;
+  cursor: pointer;
+  color: rgb(228, 227, 227);
+  transition: 0.25s;
 }
 
 .modal-description {
-	padding: 2rem;
-	font-size: 15px;
+  padding: 2rem;
+  font-size: 15px;
 }
