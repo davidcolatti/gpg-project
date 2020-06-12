@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import PostList from "./PostList";
 import Popup from "reactjs-popup";
 import PostModal from "./PostModal";
 
 const MainArea = (props) => {
+  let location = useLocation();
+  // console.log(location);
+
   const [posts, setPosts] = useState(null);
   const [renderedPosts, setRenderedPosts] = useState(null);
   const [selectedPost, setSelectedPost] = useState(null);
@@ -18,6 +22,7 @@ const MainArea = (props) => {
   }
 
   const toggleTrigger = () => {
+    if (modalTrigger) setSelectedPost(null);
     setModalTrigger((prev) => !prev);
   };
 
@@ -27,11 +32,19 @@ const MainArea = (props) => {
     }
   };
 
+  const modalClose = () => {
+    if (modalTrigger) setSelectedPost(null);
+    props.history.goBack();
+    setModalTrigger(false);
+  };
+
   return (
     <div className="MainArea">
-      <Popup modal open={modalTrigger}>
+      <Popup onClose={modalClose} modal open={modalTrigger}>
         {() => (
           <PostModal
+            setModalTrigger={setModalTrigger}
+            modalClose={modalClose}
             toggleTrigger={toggleTrigger}
             history={props.history}
             selectedPost={selectedPost}

@@ -1,22 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-const PostModal = ({ selectedPost, history, toggleTrigger }) => {
-  const iconCloseBtn = () => {
-    history.goBack();
-    toggleTrigger();
-  };
-
+const PostModal = ({ selectedPost, toggleTrigger }) => {
   return (
     <div className="PostModal ui card">
       <div className="modal-header">
-        <strong>{selectedPost.title}</strong>
+        <strong>{selectedPost?.title}</strong>
         <i
-          onClick={iconCloseBtn}
+          onClick={toggleTrigger}
           className="right floated close icon modal-icon"
         />
       </div>
       <div className="modal-description">
-        <p>{selectedPost.body}</p>
+        <p>{selectedPost?.body}</p>
       </div>
     </div>
   );
