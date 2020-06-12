@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route } from "react-router-dom";
+import { Route, useLocation } from "react-router-dom";
 import axios from "axios";
 
 import Header from "./components/Header";
@@ -10,15 +10,20 @@ const App = (props) => {
   const [authorList, setAuthorList] = useState(() => null);
   const [authorSelected, setAuthorSelected] = useState(() => null);
 
+  const location = useLocation();
+
   useEffect(() => {
     async function fetchData() {
       let res = await axios.get("https://jsonplaceholder.typicode.com/users");
-      console.log(res.data);
 
       setAuthorList(res.data);
     }
     fetchData();
   }, []);
+
+  // useEffect(() => {
+  //   console.log(`my path ${location.pathname} from useEffect`);
+  // }, [location]);
 
   return (
     <div className="App">
@@ -43,6 +48,7 @@ const App = (props) => {
           render={(props) => (
             <MainArea
               {...props}
+              location={location}
               authorList={authorList}
               setAuthorSelected={setAuthorSelected}
               authorSelected={authorSelected}

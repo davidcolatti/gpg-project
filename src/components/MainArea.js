@@ -1,17 +1,28 @@
-import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import PostList from "./PostList";
 import Popup from "reactjs-popup";
 import PostModal from "./PostModal";
 
 const MainArea = (props) => {
-  let location = useLocation();
-  // console.log(location);
-
   const [posts, setPosts] = useState(null);
   const [renderedPosts, setRenderedPosts] = useState(null);
   const [selectedPost, setSelectedPost] = useState(null);
   const [modalTrigger, setModalTrigger] = useState(false);
+
+  useEffect(() => {
+    const postId = props.location.pathname.split("/post/")[1];
+
+    if (postId) {
+      console.log("it does", postId);
+      var post = renderedPosts?.find((post) => post.id.toString() === postId);
+
+      setSelectedPost(post);
+    } else {
+      setSelectedPost(null);
+    }
+
+    setModalTrigger(!!post);
+  }, [props.location]);
 
   if (props.authorList) {
     let authorChosen = props.authorList.find((author) => {
@@ -34,8 +45,6 @@ const MainArea = (props) => {
 
   const modalClose = () => {
     if (modalTrigger) setSelectedPost(null);
-    props.history.goBack();
-    setModalTrigger(false);
   };
 
   return (
