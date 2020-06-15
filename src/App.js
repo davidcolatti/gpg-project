@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Route, useLocation } from "react-router-dom";
 import axios from "axios";
 
+import styles from "./app.module.scss";
+
 import Header from "./components/Header";
 import UserList from "./components/UserList";
 import MainArea from "./components/MainArea";
 
 const App = (props) => {
+  // console.log(styles);
+
   const [authorList, setAuthorList] = useState(() => null);
   const [authorSelected, setAuthorSelected] = useState(() => null);
 
@@ -20,10 +24,6 @@ const App = (props) => {
     }
     fetchData();
   }, []);
-
-  // useEffect(() => {
-  //   console.log(`my path ${location.pathname} from useEffect`);
-  // }, [location]);
 
   return (
     <div className="App">

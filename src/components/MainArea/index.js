@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import PostList from "./PostList";
+import PostList from "../PostList";
 import Popup from "reactjs-popup";
-import PostModal from "./PostModal";
+import PostModal from "../PostModal";
 
 const MainArea = (props) => {
   const [posts, setPosts] = useState(null);
@@ -33,7 +33,10 @@ const MainArea = (props) => {
   }
 
   const toggleTrigger = () => {
-    if (modalTrigger) setSelectedPost(null);
+    if (modalTrigger) {
+      setSelectedPost(null);
+      props.history.goBack();
+    }
     setModalTrigger((prev) => !prev);
   };
 
@@ -44,7 +47,10 @@ const MainArea = (props) => {
   };
 
   const modalClose = () => {
-    if (modalTrigger) setSelectedPost(null);
+    if (modalTrigger) {
+      setSelectedPost(null);
+      props.history.goBack();
+    }
   };
 
   return (

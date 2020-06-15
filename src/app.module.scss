@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* OVERIDE SEMANTIC-UI CSS */
+.segment {
+  margin: 0 !important;
+}
+
+/* APP COMPONENT */
+.app-content {
+  display: flex;
+  flex-direction: row;
+}
