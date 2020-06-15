@@ -44,7 +44,7 @@ const MainArea = (props) => {
 
   const loadMorePostsBtn = () => {
     if (renderedPosts.length < posts.length) {
-      setRenderedPosts((prevPosts) => posts.slice(0, prevPosts.length + 1));
+      setRenderedPosts((prevPosts) => posts.slice(0, prevPosts.length + 2));
     }
   };
 

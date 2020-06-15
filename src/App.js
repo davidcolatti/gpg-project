@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Route, useLocation } from "react-router-dom";
 import axios from "axios";
+import styled from "styled-components";
 
 import Header from "./components/Header";
 import UserList from "./components/UserList";
 import MainArea from "./components/MainArea";
 
-const styles = {
-  appContent: {
-    display: "flex",
-    ["flex-direction"]: "row",
-  },
-};
+const AppContent = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 const App = (props) => {
   const [authorList, setAuthorList] = useState(() => null);
@@ -36,7 +35,7 @@ const App = (props) => {
         setAuthorSelected={setAuthorSelected}
       />
 
-      <div style={styles.appContent} className="app-content">
+      <AppContent className="app-content">
         {authorList && (
           <UserList
             setAuthorSelected={setAuthorSelected}
@@ -56,7 +55,7 @@ const App = (props) => {
             />
           )}
         />
-      </div>
+      </AppContent>
     </div>
   );
 };
