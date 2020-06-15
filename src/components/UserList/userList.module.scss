@@ -1,0 +1,39 @@
+@mixin segmentOveride {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* USERLIST COMPONENT */
+.UserList {
+  width: 20rem;
+  height: 100vh;
+
+  .content {
+    padding-left: 1rem;
+  }
+
+  .item-user {
+    width: 100%;
+    padding: 0.7rem 0 !important;
+
+    &-link {
+      color: black;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: #90bcb3;
+      color: white;
+
+      .item-user-link {
+        color: white;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+/* OVERIDE SEMANTIC-UI CSS */
+.segmentOveride {
+  @include segmentOveride();
+}

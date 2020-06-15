@@ -1,0 +1,33 @@
+.PostModal {
+  width: 100% !important;
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #90bcb3;
+    color: white;
+    height: 4rem;
+    font-size: 20px;
+    padding: 0.5rem 0;
+
+    strong {
+      align-self: flex-end;
+      padding-left: 2rem;
+    }
+
+    i {
+      padding-right: 2rem;
+
+      &:hover {
+        cursor: pointer;
+        color: rgb(228, 227, 227);
+        transition: 0.25s;
+      }
+    }
+  }
+
+  .modal-description {
+    padding: 2rem;
+    font-size: 15px;
+  }
+}

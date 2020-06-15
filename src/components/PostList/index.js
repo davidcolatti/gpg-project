@@ -1,6 +1,8 @@
-import React, { Fragment, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+
+import styles from "./postList.module.scss";
 
 const PostList = (props) => {
   useEffect(() => {
@@ -27,10 +29,10 @@ const PostList = (props) => {
     return props.renderedPosts.map((post) => {
       if (post)
         return (
-          <div className="item post-item">
+          <div className={`item ${styles["post-item"]}`}>
             <Link
               to={`${props.match.params.id}/post/${post.id}`}
-              className="item-link"
+              className={styles["item-link"]}
               onClick={() => handleOnPostClick(post)}
             >
               <div className="right floated content">
@@ -43,7 +45,13 @@ const PostList = (props) => {
     });
   };
 
-  return <Fragment>{props.renderedPosts && displayPostList()}</Fragment>;
+  return (
+    <div
+      className={`${styles.PostList} segment ui middle aligned divided list`}
+    >
+      {props.renderedPosts && displayPostList()}
+    </div>
+  );
 };
 
 export default PostList;

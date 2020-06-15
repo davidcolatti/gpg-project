@@ -3,6 +3,8 @@ import PostList from "../PostList";
 import Popup from "reactjs-popup";
 import PostModal from "../PostModal";
 
+import styles from "./mainArea.module.scss";
+
 const MainArea = (props) => {
   const [posts, setPosts] = useState(null);
   const [renderedPosts, setRenderedPosts] = useState(null);
@@ -54,8 +56,13 @@ const MainArea = (props) => {
   };
 
   return (
-    <div className="MainArea">
-      <Popup onClose={modalClose} modal open={modalTrigger}>
+    <div className={styles.MainArea}>
+      <Popup
+        // className={styles["popup-content"]}
+        onClose={modalClose}
+        modal
+        open={modalTrigger}
+      >
         {() => (
           <PostModal
             setModalTrigger={setModalTrigger}
@@ -68,17 +75,17 @@ const MainArea = (props) => {
       </Popup>
 
       <div className="main-top-div">
-        <div className="main-top-content">
-          <span className="top-content-left">
+        <div className={styles["main-top-content"]}>
+          <span className={styles["top-content-left"]}>
             <strong>{props.authorSelected?.name}</strong>
             <br />
             <i>{props.authorSelected?.username}</i>
           </span>
-          <span className="top-content-right">
+          <span className={styles["top-content-right"]}>
             {props.authorSelected?.email}
           </span>
         </div>
-        <div className="main-top-contact">
+        <div className={styles["main-top-contact"]}>
           <span>
             <strong>Contact</strong>
             <br />
@@ -91,25 +98,25 @@ const MainArea = (props) => {
         </div>
       </div>
       <div className="main-bottom-div">
-        <div className="post-list-title">
-          <span className="left-title">
+        <div className={styles["post-list-title"]}>
+          <span className={styles["left-title"]}>
             <strong>Post List by {props.authorSelected?.name}</strong>
           </span>
-          <span className="right-title">
+          <span className={styles["right-title"]}>
             Total posts {renderedPosts?.length}
           </span>
         </div>
-        <div className="post-list segment ui middle aligned divided list">
-          <PostList
-            setSelectedPost={setSelectedPost}
-            toggleTrigger={toggleTrigger}
-            renderedPosts={renderedPosts}
-            setPosts={setPosts}
-            setRenderedPosts={setRenderedPosts}
-            {...props}
-          />
-        </div>
-        <div className="posts-button-div">
+        {/* <div className="post-list segment ui middle aligned divided list"> */}
+        <PostList
+          setSelectedPost={setSelectedPost}
+          toggleTrigger={toggleTrigger}
+          renderedPosts={renderedPosts}
+          setPosts={setPosts}
+          setRenderedPosts={setRenderedPosts}
+          {...props}
+        />
+        {/* </div> */}
+        <div className={styles["posts-button-div"]}>
           {renderedPosts?.length < posts?.length && (
             <button onClick={loadMorePostsBtn} className="ui button">
               Load More Posts
