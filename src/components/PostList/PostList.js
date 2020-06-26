@@ -31,7 +31,7 @@ const PostList = (props) => {
         return (
           <div className={`item ${styles["post-item"]}`}>
             <Link
-              to={`${props.match.params.id}/post/${post.id}`}
+              to={`${props.match?.params.id}/post/${post.id}`}
               className={styles["item-link"]}
               onClick={() => handleOnPostClick(post)}
             >

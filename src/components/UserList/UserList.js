@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import styles from "./userList.module.scss";
 
 const UserList = ({ authorList, setAuthorSelected }) => {
-  console.log(styles);
-
   const displayAuthorList = () => {
     if (authorList) {
       return authorList.map((author) => {

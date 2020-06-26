@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, useLocation } from "react-router-dom";
+import { Route } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 
@@ -15,8 +15,6 @@ const AppContent = styled.div`
 const App = (props) => {
   const [authorList, setAuthorList] = useState(() => null);
   const [authorSelected, setAuthorSelected] = useState(() => null);
-
-  const location = useLocation();
 
   useEffect(() => {
     async function fetchData() {
@@ -48,7 +46,7 @@ const App = (props) => {
           render={(props) => (
             <MainArea
               {...props}
-              location={location}
+              // location={location}
               authorList={authorList}
               setAuthorSelected={setAuthorSelected}
               authorSelected={authorSelected}

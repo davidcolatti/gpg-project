@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import PostList from "../PostList";
+import PostList from "../PostList/PostList";
 import Popup from "reactjs-popup";
-import PostModal from "../PostModal";
+import PostModal from "../PostModal/PostModal";
 
 import styles from "./mainArea.module.scss";
+import { useLocation, useParams } from "react-router-dom";
 
 const MainArea = (props) => {
   const [posts, setPosts] = useState(null);
@@ -11,11 +12,13 @@ const MainArea = (props) => {
   const [selectedPost, setSelectedPost] = useState(null);
   const [modalTrigger, setModalTrigger] = useState(false);
 
+  const location = useLocation();
+  const params = useParams();
+
   useEffect(() => {
-    const postId = props.location.pathname.split("/post/")[1];
+    const postId = location.pathname.split("/post/")[1];
 
     if (postId) {
-      console.log("it does", postId);
       var post = renderedPosts?.find((post) => post.id.toString() === postId);
 
       setSelectedPost(post);
@@ -24,11 +27,11 @@ const MainArea = (props) => {
     }
 
     setModalTrigger(!!post);
-  }, [props.location]);
+  }, [location]);
 
   if (props.authorList) {
     let authorChosen = props.authorList.find((author) => {
-      return author.id.toString() === props.match.params.id;
+      return author.id.toString() === params.id;
     });
 
     props.setAuthorSelected(authorChosen);
@@ -89,9 +92,9 @@ const MainArea = (props) => {
           <span>
             <strong>Contact</strong>
             <br />
-            {`${props.authorSelected?.address.suite} ${props.authorSelected?.address.street}`}
+            {`${props.authorSelected?.address?.suite} ${props.authorSelected?.address?.street}`}
             <br />
-            {`${props.authorSelected?.address.city}, ${props.authorSelected?.address.zipcode}`}
+            {`${props.authorSelected?.address?.city}, ${props.authorSelected?.address?.zipcode}`}
             <br />
             {props.authorSelected?.phone}
           </span>
